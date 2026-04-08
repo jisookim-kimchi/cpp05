@@ -3,11 +3,9 @@ Bureaucrat::GradeTooLowException();
 is it a static fucntion in Bureaurcrat class?
 :: it means this is belong to Bureaucrat class.
 
-Bureaucrat::GradeTooLowException() it means
+Bureaucrat::GradeTooLowException() --> GradeToolLowException default constructor called
 
-Bureaucrat 클래스 안방에 존재하는 GradeTooLowException 클래스의 객체를 지금 당장 기본 생성자 () 로 하나 찍어내라.
-
-throw() or noexcept를 사용할때 : 무조건 에러가 있는 곳! 
+Use throw() or noexcept only when you are 100% sure that no errors will occur.
 
 함수선언뒤 noexcept : 
     - 이 함수는 예외를 던지지 않습니다. 
@@ -16,3 +14,23 @@ std::exception::what() : 여기에도 noexcept 가 붙어있다, 억지로라도
 
 throw() : Exception Specificatoin. 발생!
 try 탈출 -> catch로 배송완료!
+
+'''test
+About noexcept after a function declaration
+This function does not throw exceptions.
+If it does throw, the program will terminate abnormally.
+'''
+
+'''test
+About std::exception::what():
+
+It is also declared with noexcept.
+You must declare it the same way when overriding it, otherwise it will not compile.
+'''
+
+'''test
+About throw() (Exception Specification):
+
+It specifies which exceptions can be thrown (deprecated in modern C++).
+When an exception occurs, control leaves the try block and go to the catch block.
+'''
