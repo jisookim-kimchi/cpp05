@@ -15,22 +15,23 @@ std::exception::what() : 여기에도 noexcept 가 붙어있다, 억지로라도
 throw() : Exception Specificatoin. 발생!
 try 탈출 -> catch로 배송완료!
 
-'''test
+```test
 About noexcept after a function declaration
-This function does not throw exceptions.
-If it does throw, the program will terminate abnormally.
-'''
 
-'''test
-About std::exception::what():
+-This function does not throw exceptions.
+-If it does throw, the program will terminate abnormally.
+```
 
-It is also declared with noexcept.
-You must declare it the same way when overriding it, otherwise it will not compile.
-'''
+```test
+About std::exception::what()
 
-'''test
+-It is also declared with noexcept.
+-You must declare it the same way when overriding it, otherwise it will not compile.
+```
+
+```test
 About throw() (Exception Specification):
 
-It specifies which exceptions can be thrown (deprecated in modern C++).
-When an exception occurs, control leaves the try block and go to the catch block.
-'''
+-It specifies which exceptions can be thrown.
+-When an exception occurs, control leaves the try block and go to the catch block.
+```
