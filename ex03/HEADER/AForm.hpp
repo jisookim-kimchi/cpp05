@@ -1,8 +1,6 @@
 #ifndef AFORM_HPP
 #define AFORM_HPP
 
-#include <string>
-#include <exception>
 #include "Bureaucrat.hpp"
 
 class AForm

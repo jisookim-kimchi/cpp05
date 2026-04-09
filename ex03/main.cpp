@@ -1,5 +1,9 @@
-#include "Bureaucrat.hpp"
 #include <iostream>
+#include "HEADER/AForm.hpp"
+#include "HEADER/PresidentialPardonForm.hpp"
+#include "HEADER/ShrubberyCreationForm.hpp"
+#include "HEADER/RobotomyRequestForm.hpp"
+#include "HEADER/Intern.hpp"
 
 int main()
 {

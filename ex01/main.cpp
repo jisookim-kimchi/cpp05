@@ -1,9 +1,19 @@
-#include "Bureaucrat.hpp"
+#include "HEADER/Form.hpp"
 #include <iostream>
 
 int main()
 {
-    
+    Bureaucrat *kimchi = new Bureaucrat("kimchi", 5);
+    //Bureaucrat *haribo = new Bureaucrat("haribo", 15);
+    Form *A = new Form("A", 10, 10);
+    Form *B = new Form("B", 151, 151);
+    (void)B;
+    A->beSigned(*kimchi);
+    //A->beSigned(*haribo);
+    std::cout << A->getIssign() << std::endl;
+    delete A;
+    delete B;
+    delete kimchi;
 
     return 0;
 }

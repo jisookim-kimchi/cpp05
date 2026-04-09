@@ -1,4 +1,4 @@
-#include "AForm.hpp"
+#include "../HEADER/AForm.hpp"
 #include <iostream>
 
 AForm::AForm() : _name("default"), _issign(false), _grade_to_sign(150), _grade_to_execute(150)

@@ -1,6 +1,6 @@
-#include "Bureaucrat.hpp"
+// #include "../HEADER/Bureaucrat.hpp"
 #include <iostream>
-#include "Form.hpp"
+#include "../HEADER/Form.hpp"
 
 Bureaucrat::Bureaucrat() : _name("default"), _grade(150)
 {

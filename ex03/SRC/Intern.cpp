@@ -1,8 +1,7 @@
-#include "Intern.hpp"
-#include "AForm.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "ShrubberyCreationForm.hpp"
+#include "../HEADER/Intern.hpp"
+#include "../HEADER/PresidentialPardonForm.hpp"
+#include "../HEADER/RobotomyRequestForm.hpp"
+#include "../HEADER/ShrubberyCreationForm.hpp"
 #include <iostream>
 
 using FormCreatorFunc = AForm* (Intern::*)(const std::string&);

@@ -1,5 +1,4 @@
-#include "PresidentialPardonForm.hpp"
-#include "AForm.hpp"
+#include "../HEADER/PresidentialPardonForm.hpp"
 #include <iostream>
 
 PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", 25, 5), _target("default")
