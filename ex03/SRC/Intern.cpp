@@ -8,9 +8,9 @@ using FormCreatorFunc = AForm* (Intern::*)(const std::string&);
 
 Intern::Intern()
 {
-    this->_formNames[0] = "shrubbery creation";
-    this->_formNames[1] = "robotomy request";
-    this->_formNames[2] = "presidential pardon";
+    this->_formNames[0] = "ShrubberyCreationForm";
+    this->_formNames[1] = "RobotomyRequestForm";
+    this->_formNames[2] = "PresidentialPardonForm";
 }
 
 Intern::~Intern()
