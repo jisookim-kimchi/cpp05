@@ -6,7 +6,7 @@
 /*   By: jisokim2 <jisokim2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 11:51:05 by jisokim2          #+#    #+#             */
-/*   Updated: 2026/04/17 11:51:06 by jisokim2         ###   ########.fr       */
+/*   Updated: 2026/04/17 12:09:36 by jisokim2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void Bureaucrat::signForm(AForm &form)
    {
     form.beSigned(*this);
    }
-   catch (AForm::GradeTooLowException &except)
+   catch (const AForm::GradeTooLowException &except)
    {
     std::cerr << getName() << " couldn't sign " << form.getName()  << " because " << except.what() << std::endl;
     return ;
@@ -107,7 +107,7 @@ void Bureaucrat::executeForm(AForm &form)
     {
         form.execute(*this);
     }
-    catch (AForm::GradeTooLowException &except)
+    catch (const AForm::GradeTooLowException &except)
     {
         std::cerr << getName() << " couldn't execute " << form.getName()  << " because " << except.what() << std::endl;
         return ;

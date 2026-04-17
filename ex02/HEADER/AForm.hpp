@@ -6,7 +6,7 @@
 /*   By: jisokim2 <jisokim2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 11:50:46 by jisokim2          #+#    #+#             */
-/*   Updated: 2026/04/17 11:50:47 by jisokim2         ###   ########.fr       */
+/*   Updated: 2026/04/17 12:36:57 by jisokim2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,6 @@ public:
     const int &getGradeToExecute() const;
     void beSigned(const Bureaucrat &bureaucrat);
     void execute(const Bureaucrat &executor) const;
-
-    // virtual void action() const = 0;
-    // void check(const Bureaucrat &executor) const;
     
     class NotSignedException : public std::exception
     {

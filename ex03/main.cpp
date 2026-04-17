@@ -6,7 +6,7 @@
 /*   By: jisokim2 <jisokim2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 11:52:34 by jisokim2          #+#    #+#             */
-/*   Updated: 2026/04/17 11:52:35 by jisokim2         ###   ########.fr       */
+/*   Updated: 2026/04/17 12:29:44 by jisokim2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,26 @@ int main()
 {
     Bureaucrat *boss = new Bureaucrat("boss", 1);
     Bureaucrat *employee = new Bureaucrat("employee", 30);
-
     Intern *intern = new Intern();
-    AForm *a1 = intern->makeForm("ShrubberyCreationForm", "currywurst");
-    AForm *a2 = intern->makeForm("RobotomyRequestForm", "haribo");
-    AForm *a3 = intern->makeForm("PresidentialPardonForm", "kimchi");
-    //AForm *a4 = intern->makeForm("what", "kimchi");
+
+    AForm *a1 = NULL;
+    AForm *a2 = NULL;
+    AForm *a3 = NULL;
+    AForm *a4 = NULL;
+
+    try
+    {
+        a1 = intern->makeForm("ShrubberyCreationForm", "currywurst");
+        a2 = intern->makeForm("RobotomyRequestForm", "haribo");
+        a3 = intern->makeForm("PresidentialPardonForm", "kimchi");
+        a4 = intern->makeForm("worng", "unknown");
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << "Intern error: " << e.what() << std::endl;
+    }
+
+    std::cout << "---------------- TEST 1 ----------------" << std::endl;
 
     if (a1)
     {
@@ -35,7 +49,9 @@ int main()
         boss->executeForm(*a1);
         employee->executeForm(*a1);
     }
-    std::cout << "-------------------------------------------------------------------" << std::endl;
+
+    std::cout << "---------------- TEST 2 ----------------" << std::endl;
+    
     if (a2)
     {
         boss->signForm(*a2);
@@ -43,7 +59,9 @@ int main()
         boss->executeForm(*a2);
         employee->executeForm(*a2);
     }
-    std::cout << "-------------------------------------------------------------------" << std::endl;
+
+    std::cout << "---------------- TEST 3 ----------------" << std::endl;
+    
     if (a3)
     {
         boss->signForm(*a3);
@@ -51,13 +69,16 @@ int main()
         boss->executeForm(*a3);
         employee->executeForm(*a3);
     }
-    delete boss;
-    delete employee;
-    delete intern;
+
+    std::cout << "---------------- CLEANUP! ----------------" << std::endl;
+
     delete a1;
     delete a2;
     delete a3;
-    //delete a4;
-    
+    delete a4;
+    delete intern;
+    delete boss;
+    delete employee;
+
     return 0;
 }

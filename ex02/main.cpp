@@ -6,7 +6,7 @@
 /*   By: jisokim2 <jisokim2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 11:51:17 by jisokim2          #+#    #+#             */
-/*   Updated: 2026/04/17 11:51:18 by jisokim2         ###   ########.fr       */
+/*   Updated: 2026/04/17 12:40:35 by jisokim2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,27 +18,45 @@
 
 int main()
 {
-    Bureaucrat *boss = new Bureaucrat("boss", 1);
-    Bureaucrat *employee = new Bureaucrat("employee", 30);
+    try
+    {
+        Bureaucrat boss("boss", 1);
+        Bureaucrat employee("employee", 120);
 
-    PresidentialPardonForm *kimchi =  new PresidentialPardonForm("kimchi");
-    RobotomyRequestForm *haribo = new RobotomyRequestForm("haribo");
-    ShrubberyCreationForm *currywurst = new ShrubberyCreationForm("currywurst");
+        PresidentialPardonForm kimchi("kimchi");
+        RobotomyRequestForm haribo("haribo");
+        ShrubberyCreationForm currywurst("currywurst");
 
-    boss->signForm(*kimchi);
-    //employee->signForm(*kimchi);
-    employee->signForm(*haribo);
-    employee->signForm(*currywurst);
-    
-    boss->executeForm(*kimchi);
-    boss->executeForm(*haribo);
-    boss->executeForm(*currywurst);
+        boss.signForm(kimchi);        // should succeed
+        employee.signForm(haribo);    // should fail
+        employee.signForm(currywurst);
 
-    delete kimchi;
-    delete haribo;
-    delete currywurst;
-    delete boss;
-    delete employee;
-    
+        boss.executeForm(kimchi);     // should succeed
+        employee.executeForm(haribo); // should fail (not signed OR low grade)
+        boss.executeForm(haribo);     // may succeed (if signed)
+        boss.executeForm(currywurst); // should fail (not signed)
+
+        try
+        {
+            Bureaucrat bad("bad", 0);
+        }
+        catch (const std::exception &e)
+        {
+            std::cout << "Caught Bureaucrat error: " << e.what() << std::endl;
+        }
+        try
+        {
+            Bureaucrat bad2("bad2", 200);
+        }
+        catch (const std::exception &e)
+        {
+            std::cout << "Caught Bureaucrat error: " << e.what() << std::endl;
+        }
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << "error: " << e.what() << std::endl;
+    }
+
     return 0;
 }

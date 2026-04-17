@@ -57,5 +57,3 @@ All local (automatic) variables in functions that are exited during unwinding
 In reverse order of construction
 ```
 
-
-Template Method Pattern

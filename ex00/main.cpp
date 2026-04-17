@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jisokim2 <jisokim2@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/17 11:49:59 by jisokim2          #+#    #+#             */
-/*   Updated: 2026/04/17 11:50:00 by jisokim2         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "HEADER/Bureaucrat.hpp"
 #include <iostream>
 
@@ -20,11 +8,11 @@ int main()
         Bureaucrat kimchi("kimchi", 0);
         std::cout << kimchi.getName() << " " << kimchi.getGrade() << std::endl; //skip...
     }
-    catch (Bureaucrat::GradeTooHighException &except)
+    catch (const Bureaucrat::GradeTooHighException &except)
     {
         std::cerr << except.what() << std::endl;
     }
-    catch (Bureaucrat::GradeTooLowException &except)
+    catch (const Bureaucrat::GradeTooLowException &except)
     {
         std::cerr << except.what() << std::endl;
     }
