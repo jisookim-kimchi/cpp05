@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Intern.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jisokim2 <jisokim2@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/17 11:52:20 by jisokim2          #+#    #+#             */
+/*   Updated: 2026/04/17 11:52:21 by jisokim2         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../HEADER/Intern.hpp"
 #include "../HEADER/PresidentialPardonForm.hpp"
 #include "../HEADER/RobotomyRequestForm.hpp"
@@ -51,7 +63,7 @@ AForm* Intern::makeShrubbery(const std::string& target)
 AForm* Intern::makeRobotomy(const std::string& target)
 {
     std::cout << "Intern creates RobotomyRequestForm for " << target << std::endl;
-    return new RobotomyRequestForm(target);
+        return new RobotomyRequestForm(target);
 }
 AForm* Intern::makePresidential(const std::string& target)
 {

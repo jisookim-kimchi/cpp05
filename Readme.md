@@ -50,3 +50,12 @@ About throw() (Exception Specification):
    0x00007ffff7cae4ce <+62>:    call   0x7ffff7c9e830 <__cxa_begin_catch@plt>
    0x00007ffff7cae4d3 <+67>:    call   0x7ffff7c9e2e0 <_ZSt9terminatev@plt>
 ```
+
+```text
+Unwind : cleanup(call destructor) + search(find matching handler)
+All local (automatic) variables in functions that are exited during unwinding
+In reverse order of construction
+```
+
+
+Template Method Pattern
