@@ -6,7 +6,7 @@
 /*   By: jisokim2 <jisokim2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 11:50:19 by jisokim2          #+#    #+#             */
-/*   Updated: 2026/04/17 12:08:39 by jisokim2         ###   ########.fr       */
+/*   Updated: 2026/06/19 16:57:47 by jisokim2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,12 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
     return (*this);
 }
 
-const char* Bureaucrat::GradeTooHighException::what() const throw()
+const char* Bureaucrat::GradeTooHighException::what() const noexcept
 {
     return "Grade is too high!";
 }
 
-const char* Bureaucrat::GradeTooLowException::what() const throw()
+const char* Bureaucrat::GradeTooLowException::what() const noexcept
 {
     return "Grade is too low!";
 }
